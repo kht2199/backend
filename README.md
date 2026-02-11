@@ -14,12 +14,12 @@ Spring Boot 기반의 RESTful API 서버입니다. JPA, MyBatis, SSE를 활용�
 ## 🛠 기술 스택
 
 - **Java**: 21
-- **Spring Boot**: 3.4.1
+- **Spring Boot**: 3.5.10
 - **빌드 도구**: Gradle (Kotlin DSL)
 - **데이터베이스**: H2 (In-memory)
 - **ORM/Persistence**:
   - Spring Data JPA (Member 도메인)
-  - MyBatis 3.0.3 (Post 도메인)
+  - MyBatis 3.0.5 (Post 도메인)
 - **API 문서**: SpringDoc OpenAPI 3 (Swagger)
 - **기타**: Lombok, Validation
 
@@ -117,8 +117,19 @@ cd backend
 
 - **Swagger UI**: http://localhost:8080/swagger-ui.html
 - **OpenAPI JSON**: http://localhost:8080/v3/api-docs
+- **OpenAPI YAML**: http://localhost:8080/v3/api-docs.yaml
 
 Swagger UI에서 모든 API를 테스트할 수 있습니다.
+
+### OpenAPI JSON 파일 생성
+
+`springdoc-openapi-gradle-plugin`을 사용하여 빌드 타임에 `openapi.json` 파일을 생성할 수 있습니다:
+
+```bash
+./gradlew generateOpenApiDocs
+```
+
+생성된 파일은 `build/docs/openapi.json` 경로에 저장됩니다.
 
 ## 🗄 데이터베이스
 
